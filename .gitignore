@@ -1,3 +1,5 @@
+in/
+out/
 *.out
 *.txt
 .DS_Store
