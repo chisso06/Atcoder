@@ -1,3 +1,5 @@
+//9:23
+
 #include <stdio.h>
 
 int	main() {
@@ -12,5 +14,3 @@ int	main() {
 	printf("%d\n", max);
 	return 0;
 }
-
-// 9:23
