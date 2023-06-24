@@ -13,17 +13,10 @@ int	d_xy(int x1, int y1, int x2, int y2) {
 }
 
 void	inflection(int i, int n, vector<int> &v, vector< vector<int> > list) {
-	if (i == n)
-		return ;
-	if (v[i]) {
-		rep(j, list[i].size()) {
-			if (list[i][j] > 0) {
-				int	t = list[i][j];
-				list[i].erase(list[i].begin() + j);
-				v[t] = 1;
-				inflection(t, n, v, list);
-				j --;
-			}
+	rep(j, list[i].size()) {
+		if (!v[list[i][j]]) {
+			v[list[i][j]] = 1;
+			inflection(list[i][j], n, v, list);
 		}
 	}
 }
@@ -32,8 +25,8 @@ int	main() {
 	int	n;
 	int	d;
 	cin >> n >> d;
-	vector<int>	x(n), y(n);
-	vector<int>	v(n);
+	vector<int>				x(n), y(n);
+	vector<int>				v(n, 0);
 	vector< vector<int> >	list(n, vector<int>());
 
 	rep(i, n)
