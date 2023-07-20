@@ -1,3 +1,4 @@
+// #include <bits/stdc++.h>
 #include <iostream>
 #include <vector>
 #include <set>
@@ -8,6 +9,17 @@
 #define find(list, value) find(list.begin(), list.end(), value)
 using namespace std;
 
+vector<int>	dx = {-1, 0, 1, 0};
+vector<int>	dy = {1, 0, -1, 0};
+
 int	main() {
+	int	n, a, b, c, answer;
+	cin >> n >> a >> b;
+	rep (i, 0, n) {
+		cin >> c;
+		if (c == a + b)
+			answer = i + 1;
+	}
+	cout << answer << endl;
 	return 0;
 }
